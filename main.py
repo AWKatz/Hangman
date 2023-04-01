@@ -33,7 +33,7 @@ lives = 6
 while end_of_game == False:
     # Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
     guess = input("Pick a letter:\n").lower()
-    
+
     # Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
     #for letter in chosen_word:
     # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
@@ -54,8 +54,11 @@ while end_of_game == False:
         lives -= 1
         # Check if the users lives reached 0.
         if lives == 0:
+            print("\nYOU LOSE!")
+            # This wasn't part of the daily lesson, but I added it for playability
+            print(f"The word was: {chosen_word}")
             end_of_game = True
-            print("YOU LOSE!")
+
         # If the user has repeated a guess, let the user know.
         if guess in display:
             print(f"\nYou've already guessed {guess}")
